@@ -1,0 +1,35 @@
+/*
+Step 1:
+Add this code to Divi-Theme Options-Intergration-Body Section
+*/
+
+<script>
+
+	jQuery(document).ready(function(){
+
+		// CHECK IF FILTERABLE PORTFOLIO IS PRESENT ON PAGE
+
+		if(jQuery('.et_pb_filterable_portfolio').length) {
+
+			// TRIGGER CLICK ON FIRST CATEGORY AFTER PAGE HAS LOADED AND INITIAL JAVASCRIPT FUNCTIONS RUN
+
+			setTimeout( function(){
+
+				jQuery('.et_pb_portfolio_filters ul').children().eq(2).find('a').trigger('click');
+
+			}, 500);
+
+		}
+
+	});
+
+</script>
+
+/*
+Step 2:
+Add this code to Divi-Theme Options-General-Custom CSS
+*/
+
+.et_pb_portfolio_filters ul li:first-of-type {
+display: none;
+}
